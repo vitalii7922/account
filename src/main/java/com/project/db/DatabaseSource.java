@@ -10,16 +10,15 @@ import java.util.Properties;
 
 
 @Log
-public class DatabaseUtilize {
+public class DatabaseSource {
     private static final String DB_DRIVER_CLASS = "driver.class.name";
     private static final String DB_USERNAME = "db.username";
     private static final String DB_PASSWORD = "db.password";
     private static final String DB_URL = "db.url";
     private static Connection connection = null;
 
-    private DatabaseUtilize() {
+    private DatabaseSource() {
     }
-
 
     static {
         try(FileInputStream fileInputStream = new FileInputStream("src/main/resources/database.properties")) {
