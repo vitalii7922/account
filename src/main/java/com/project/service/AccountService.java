@@ -13,6 +13,14 @@ import java.util.Optional;
 public class AccountService {
     private static final Gson gson = new Gson();
     private AccountDAO accountDAO = AccountDAO.getAccountDao();
+    private static AccountService accountService = new AccountService();
+
+    private AccountService() {
+    }
+
+    public static AccountService getAccountService() {
+        return accountService;
+    }
 
     public Account getAccountByName(String firstName) {
         Optional<Account> optionalAccount = Optional.ofNullable(accountDAO.findByName(firstName));

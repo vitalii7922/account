@@ -14,7 +14,9 @@ public class AccountController {
 
     private static final String ENDPOINT = "/api/account";
 
-    public AccountController(final AccountService accountService) {
+    private AccountService accountService = AccountService.getAccountService();
+
+    public AccountController() {
         post(ENDPOINT, (request, response) -> {
             if (!accountService.isJSONValid(request.body())) {
                 throw new ExceptionInvalidInput("Invalid JSON format");
