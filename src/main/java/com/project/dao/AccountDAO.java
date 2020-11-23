@@ -10,7 +10,7 @@ import java.sql.SQLException;
 @Log
 public class AccountDAO {
 
-    private static final AccountDAO accountDAO = new AccountDAO();
+    private static AccountDAO accountDAO = new AccountDAO();
 
     private AccountDAO() {
     }
@@ -37,7 +37,6 @@ public class AccountDAO {
         String sql = "SELECT first_name, last_name FROM account WHERE first_name = ?";
         try (PreparedStatement preparedStatement = DatabaseSource.getConnection().prepareStatement(sql)) {
             preparedStatement.setString(1, firstName);
-            // loop through the result set
             try (ResultSet rs = preparedStatement.executeQuery()) {
                 while (rs.next()) {
                     account = Account.builder()
@@ -69,7 +68,7 @@ public class AccountDAO {
 
     public void deleteAccount(String firstName) {
         String query = "DELETE FROM account WHERE first_name = ?";
-        try (PreparedStatement preparedStatement = DatabaseSource.getConnection().prepareStatement(query)) {
+        try (PreparedStatement preparedStatement = DatabaseSource.getConnection().prepareStatement(query);) {
             preparedStatement.setString(1, firstName);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

@@ -1,5 +1,6 @@
 package com.project.service;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.project.dao.AccountDAO;
 import com.project.domain.Account;
 import com.project.exception.ExceptionAccountExists;
@@ -11,7 +12,7 @@ import java.util.Optional;
 
 public class AccountService {
     private static final Gson gson = new Gson();
-    private final AccountDAO accountDAO = AccountDAO.getAccountDao();
+    private AccountDAO accountDAO = AccountDAO.getAccountDao();
 
     public Account getAccountByName(String firstName) {
         Optional<Account> optionalAccount = Optional.ofNullable(accountDAO.findByName(firstName));
@@ -39,21 +40,19 @@ public class AccountService {
     }
 
     public ResponseMessage deleteAccount(String firstName) {
-        if (firstName == null) {
-            throw new ExceptionInvalidInput("First name cannot be null");
-        }
+        validateFirstName(firstName);
         getAccountByName(firstName);
         accountDAO.deleteAccount(firstName);
         return new ResponseMessage(String.format("Account with first name %s has been deleted", firstName));
     }
 
-    private void validateFirstName(String firstName) {
+    public void validateFirstName(String firstName) {
         if (firstName == null) {
             throw new ExceptionInvalidInput("First name cannot be null");
         }
     }
 
-    private void validateLastName(String lastName) {
+    public void validateLastName(String lastName) {
         if (lastName == null) {
             throw new ExceptionInvalidInput("Last name cannot be null");
         }
@@ -63,7 +62,7 @@ public class AccountService {
         try {
             gson.fromJson(jsonInString, Account.class);
             return true;
-        } catch(com.google.gson.JsonSyntaxException ex) {
+        } catch(JsonSyntaxException ex) {
             return false;
         }
     }
