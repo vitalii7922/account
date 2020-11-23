@@ -5,7 +5,6 @@ import com.despegar.http.client.HttpClientException;
 import com.despegar.http.client.HttpResponse;
 import com.despegar.sparkjava.test.SparkServer;
 import com.project.controller.AccountController;
-import com.project.domain.Account;
 import com.project.service.AccountService;
 import org.junit.Assert;
 import org.junit.ClassRule;
@@ -16,7 +15,6 @@ import spark.servlet.SparkApplication;
 
 import java.nio.charset.StandardCharsets;
 
-//import org.junit.ClassRule;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UnitTest {
@@ -35,11 +33,6 @@ public class UnitTest {
 
     @Test
     public void getResponseWithAccountJSON() throws HttpClientException {
-        Account account = Account.builder()
-                .firstName("Petr")
-                .lastName("Petrov")
-                .build();
-
         GetMethod get = testServer.get("/api/account?firstName=Petr", false);
         HttpResponse httpResponse = testServer.execute(get);
         String result = new String(httpResponse.body(), StandardCharsets.UTF_8);
