@@ -20,8 +20,15 @@ public class AccountDAO {
         return accountDAO;
     }
 
+    //get connection to datasource
     private java.sql.Connection connection =  DatabaseSource.getConnection();
 
+    /**
+     * save an account to DB
+     *
+     * @param account account
+     * @return saved account or null if exception's thrown
+     */
     public Account save(Account account) {
         String sql = "INSERT INTO account(first_name, last_name) VALUES(?,?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -35,6 +42,12 @@ public class AccountDAO {
         return null;
     }
 
+    /**
+     *find an account in DB
+     *
+     * @param firstName first name of an entity
+     * @return account entity or null if an entity with specified name not found
+     */
     public Account findByName(String firstName) {
         Account account = null;
         String sql = "SELECT first_name, last_name FROM account WHERE first_name = ?";
@@ -54,6 +67,13 @@ public class AccountDAO {
         return account;
     }
 
+    /**
+     * update last name of an entity
+     *
+     * @param firstName first name of an entity
+     * @param lastName last name of an entity
+     * @return updated entity
+     */
     public Account updateLastName(String firstName, String lastName) {
         String query = "UPDATE account SET last_name = ? WHERE first_name = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -69,6 +89,12 @@ public class AccountDAO {
                 .build();
     }
 
+    /**
+     *
+     * delete an account in DB
+     *
+     * @param firstName first name of an account
+     */
     public void deleteAccount(String firstName) {
         String query = "DELETE FROM account WHERE first_name = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query);) {

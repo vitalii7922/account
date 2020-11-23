@@ -9,6 +9,11 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 
+/**
+ * used to connect to the database
+ *
+ * a connection is executed with a property file
+ */
 @Log
 public class DatabaseSource {
     private static final String DB_DRIVER_CLASS = "driver.class.name";
@@ -16,6 +21,7 @@ public class DatabaseSource {
     private static final String DB_PASSWORD = "db.password";
     private static final String DB_URL = "db.url";
     private static Connection connection = null;
+
 
     private DatabaseSource() {
     }

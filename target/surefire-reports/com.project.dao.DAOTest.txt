@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.project.AccountServiceTest
+Test set: com.project.dao.DAOTest
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.844 s - in com.project.AccountServiceTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.282 s - in com.project.dao.DAOTest

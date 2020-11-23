@@ -10,12 +10,18 @@ import com.project.service.AccountService;
 
 import static spark.Spark.*;
 
+/**
+ * handle requests from a client
+ */
 public class AccountController {
 
     private static final String ENDPOINT = "/api/account";
-
+    //initialize dependency
     private AccountService accountService = AccountService.getAccountService();
 
+    /**
+     * initialize methods for handling requests
+     */
     public AccountController() {
         post(ENDPOINT, (request, response) -> {
             if (!accountService.isJSONValid(request.body())) {

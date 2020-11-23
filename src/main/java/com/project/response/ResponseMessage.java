@@ -2,6 +2,10 @@ package com.project.response;
 
 import lombok.EqualsAndHashCode;
 
+
+/**
+ * used for messages in JSON format
+ */
 @EqualsAndHashCode
 public class ResponseMessage {
 

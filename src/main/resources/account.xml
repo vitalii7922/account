@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dataset>
-    <account first_name='John' last_name='Black' />
-
-    <account first_name='Samuel' last_name='L-Jackson' />
-
-    <account first_name='Leonardo' last_name='Dikaprio' />
-</dataset>

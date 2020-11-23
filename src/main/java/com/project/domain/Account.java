@@ -1,6 +1,9 @@
 package com.project.domain;
 import lombok.*;
 
+/**
+ * Entity
+ */
 @Getter
 @Builder
 @EqualsAndHashCode

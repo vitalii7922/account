@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.project.AccountServiceTest
+Test set: com.project.UnitTest
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.844 s - in com.project.AccountServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.446 s - in com.project.UnitTest

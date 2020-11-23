@@ -1,2 +1,4 @@
-com\project\AppTest.class
+com\project\dao\DAOTest.class
 com\project\AccountServiceTest.class
+com\project\UnitTest$BoardBoxControllerTestSparkApplication.class
+com\project\UnitTest.class
