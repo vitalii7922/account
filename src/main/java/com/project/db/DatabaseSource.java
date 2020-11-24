@@ -33,6 +33,7 @@ public class DatabaseSource {
             Class.forName(properties.getProperty(DB_DRIVER_CLASS));
             connection = DriverManager.getConnection(properties.getProperty(DB_URL), properties.getProperty(DB_USERNAME),
                     properties.getProperty(DB_PASSWORD));
+            log.info("database connected");
         } catch (IOException | SQLException | ClassNotFoundException e) {
             log.severe(e.getMessage());
         }

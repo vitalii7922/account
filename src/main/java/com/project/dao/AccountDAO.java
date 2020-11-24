@@ -8,6 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * responsible for interacting with database
+ */
 @Log
 public class AccountDAO {
 
@@ -35,6 +38,7 @@ public class AccountDAO {
             preparedStatement.setString(1, account.getFirstName());
             preparedStatement.setString(2, account.getLastName());
             preparedStatement.executeUpdate();
+            log.info(String.format("saved account with fields %s %s", account.getFirstName(), account.getLastName()));
             return account;
         } catch (NullPointerException | SQLException e) {
             log.severe(e.getMessage());
@@ -61,6 +65,7 @@ public class AccountDAO {
                             .build();
                 }
             }
+            log.info(String.format("found an account %s", firstName));
         } catch (SQLException e) {
             log.severe(e.getMessage());
         }
@@ -80,6 +85,7 @@ public class AccountDAO {
             preparedStatement.setString(1, lastName);
             preparedStatement.setString(2, firstName);
             preparedStatement.executeUpdate();
+            log.info(String.format("updated an account with %s %s", firstName, lastName));
         } catch (SQLException e) {
             log.severe(e.getMessage());
         }
@@ -100,6 +106,7 @@ public class AccountDAO {
         try (PreparedStatement preparedStatement = connection.prepareStatement(query);) {
             preparedStatement.setString(1, firstName);
             preparedStatement.executeUpdate();
+            log.info(String.format("deleted an account with %s", firstName));
         } catch (SQLException e) {
             log.severe(e.getMessage());
         }

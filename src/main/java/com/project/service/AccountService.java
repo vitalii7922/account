@@ -33,6 +33,7 @@ public class AccountService {
      * @return account entity or throw ExceptionAccountNotFound if entity not found
      */
     public Account getAccountByName(String firstName) {
+        validateFirstName(firstName);
         Optional<Account> optionalAccount = Optional.ofNullable(accountDAO.findByName(firstName));
         if (optionalAccount.isPresent()) {
             return optionalAccount.get();
@@ -86,7 +87,7 @@ public class AccountService {
      *
      * @param firstName first name of an accoutn
      */
-    public void validateFirstName(String firstName) {
+    void validateFirstName(String firstName) {
         if (firstName == null) {
             throw new ExceptionInvalidInput("First name cannot be null");
         }
@@ -97,7 +98,7 @@ public class AccountService {
      *
      * @param lastName last name of an entity
      */
-    public void validateLastName(String lastName) {
+    void validateLastName(String lastName) {
         if (lastName == null) {
             throw new ExceptionInvalidInput("Last name cannot be null");
         }
