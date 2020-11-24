@@ -29,7 +29,7 @@ ______
 GET           | /api/account?firstName=value     |Запросить УЗ по имени  
 POST  | /api/account  |Добавить учетную запись 
 PUT  | /api/account?firstName=value&lastName=value |Обновить фамилию у УЗ c указанным именем
-DELETE  | /api/account?firstName=value           |Удалить фамилию по указанному имени УЗ
+DELETE  | /api/account?firstName=value           |Удалить УЗ по указанному имени
 -----------
 ##Примеры запросов пользователя к веб-серверу:
 ### Request
