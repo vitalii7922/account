@@ -23,8 +23,8 @@ public class AccountDAO {
         return accountDAO;
     }
 
-    //get connection to datasource
-    private java.sql.Connection connection =  DatabaseSource.getConnection();
+    //get connection to data source
+    private java.sql.Connection connection = DatabaseSource.getConnection();
 
     /**
      * save an account to DB
@@ -47,7 +47,7 @@ public class AccountDAO {
     }
 
     /**
-     *find an account in DB
+     * find an account in DB
      *
      * @param firstName first name of an entity
      * @return account entity or null if an entity with specified name not found
@@ -76,7 +76,7 @@ public class AccountDAO {
      * update last name of an entity
      *
      * @param firstName first name of an entity
-     * @param lastName last name of an entity
+     * @param lastName  last name of an entity
      * @return updated entity
      */
     public Account updateLastName(String firstName, String lastName) {
@@ -96,7 +96,6 @@ public class AccountDAO {
     }
 
     /**
-     *
      * delete an account in DB
      *
      * @param firstName first name of an account

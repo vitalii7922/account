@@ -1,6 +1,5 @@
 package com.project.dao;
 
-import com.project.dao.AccountDAO;
 import com.project.db.DatabaseSource;
 import com.project.domain.Account;
 import org.junit.Assert;
@@ -9,9 +8,11 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;

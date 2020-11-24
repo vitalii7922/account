@@ -1,7 +1,7 @@
 package com.project.exception;
 
 /**
- *thrown if an account not found
+ * thrown if an account not found
  */
 public class ExceptionAccountNotFound extends RuntimeException {
     public ExceptionAccountNotFound(String firstName) {

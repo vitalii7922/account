@@ -3,9 +3,7 @@ package com.project.controller;
 import com.despegar.http.client.*;
 import com.despegar.sparkjava.test.SparkServer;
 import org.junit.ClassRule;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import spark.servlet.SparkApplication;
 
 import static junit.framework.TestCase.assertEquals;

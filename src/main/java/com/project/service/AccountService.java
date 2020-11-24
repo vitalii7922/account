@@ -1,4 +1,5 @@
 package com.project.service;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.project.dao.AccountDAO;
@@ -7,6 +8,7 @@ import com.project.exception.ExceptionAccountExists;
 import com.project.exception.ExceptionAccountNotFound;
 import com.project.exception.ExceptionInvalidInput;
 import com.project.response.ResponseMessage;
+
 import java.util.Optional;
 
 
@@ -59,7 +61,7 @@ public class AccountService {
      * update an account if it has correct properties and saved in DB
      *
      * @param firstName first name of an entity
-     * @param lastName last name of an entity
+     * @param lastName  last name of an entity
      * @return an entity account with updated last name
      */
     public Account updateAccount(String firstName, String lastName) {
@@ -107,7 +109,6 @@ public class AccountService {
     /**
      * validate JSON
      *
-     *
      * @param jsonInString JSON format of an entity
      * @return result of validation
      */
@@ -115,7 +116,7 @@ public class AccountService {
         try {
             gson.fromJson(jsonInString, Account.class);
             return true;
-        } catch(JsonSyntaxException ex) {
+        } catch (JsonSyntaxException ex) {
             return false;
         }
     }

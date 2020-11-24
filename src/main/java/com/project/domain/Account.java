@@ -1,5 +1,8 @@
 package com.project.domain;
-import lombok.*;
+
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 /**
  * Entity

@@ -65,3 +65,12 @@ _____
         {
             "message": "Account with name Alex not found"
         }
+_____
+### Request
+        DELETE /api/account?firstName=Alex
+        http://localhost:8080/api/account?firstName=Alex
+### Response
+    Status: 200 OK
+        {
+            "message": "Account with first name Alex has been deleted"
+        }

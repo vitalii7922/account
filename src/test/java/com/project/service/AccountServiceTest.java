@@ -5,7 +5,6 @@ import com.project.exception.ExceptionAccountExists;
 import com.project.exception.ExceptionAccountNotFound;
 import com.project.exception.ExceptionInvalidInput;
 import com.project.response.ResponseMessage;
-import com.project.service.AccountService;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;

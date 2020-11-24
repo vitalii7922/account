@@ -1,6 +1,7 @@
 package com.project.db;
 
 import lombok.extern.java.Log;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -11,7 +12,7 @@ import java.util.Properties;
 
 /**
  * used to connect to the database
- *
+ * <p>
  * a connection is executed with a property file
  */
 @Log
@@ -27,7 +28,7 @@ public class DatabaseSource {
     }
 
     static {
-        try(FileInputStream fileInputStream = new FileInputStream("src/main/resources/database.properties")) {
+        try (FileInputStream fileInputStream = new FileInputStream("src/main/resources/database.properties")) {
             Properties properties = new Properties();
             properties.load(fileInputStream);
             Class.forName(properties.getProperty(DB_DRIVER_CLASS));
